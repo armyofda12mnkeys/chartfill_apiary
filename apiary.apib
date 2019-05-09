@@ -28,7 +28,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         + IncomingFeed (object)
             + PatientID (number)
             + SiteNumber (number)
-            + ProjectCode (string) -
+            + ProjectCode (string) - NOTE: we might need to pass the Final(aka Child) Project Code here if this is a generic 'super screener'
             + Indication (string) - example: "Cancer Or Some Other Indication" CF-Nate- May not need this field due to new auth forms on CF side
             + PatientFirstName (string)
             + PatientLastName (string)
@@ -124,7 +124,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
 
 
-##Create Chartfill link for CallCenter flow aka email [/Home/???]
+##Create Chartfill link for CallCenter flow aka email [/???/???]
 ### Create Chartfill Link for CallCenter flow (email) [POST]
 
 Same almost as above but functionality-wise it emails te patient/caregiver on behalf of us.
