@@ -29,7 +29,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             + PatientID (number)
             + SiteNumber (number)
             + ProjectCode (string) - NOTE: we might need to pass the Final(aka Child) Project Code here if this is a generic 'super screener'
-            + Indication (string) - example: "Cancer Or Some Other Indication" CF-Nate- May not need this field due to new auth forms on CF side
+            + Indication (string) - example: "Cancer Or Some Other Indication" CF-Nate- May not need this field due to new auth forms on CF side... Arian: may need to pass 'Final(aka Child) Project Code' if removing this field, see comment above^
             + PatientFirstName (string)
             + PatientLastName (string)
             + PatientEmail (string) - this is usually required, but becomes optional field that won't get used if CaregiverFlow is true since CaregiverEmail becomes the person who gets emailed. If this is provided, maybe this person can be CCed on the signature (I would confirm this though as we aren't doing this currently I think. TODO: ACURIAN TO CONFIRM)
