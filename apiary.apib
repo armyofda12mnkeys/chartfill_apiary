@@ -16,13 +16,15 @@ PROD: nothing yet, TODO: GET FROM CHARTFILL
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## Create Chartfill Link for OLS embedded flow [/Home/IncomingFeed]
+## Create Chartfill Link for OLS embedded flow [/api/home/incomingfeed]
 ### Create Chartfill Link for OLS embedded flow [POST]
 
 + Request 200 (application/json)
-
+    + Headers
+    
+            API_KEY: an api secret/key will be passed here like a1b2c2d3-ijkl-1234-abcd-abcdefghijkl Note: there will be a different key per instance
+            
     + Attributes
-        + Key (string) - an api secret/key will be passed here like a1b2c2d3-ijkl-1234-abcd-abcdefghijkl, Note: there will be a different key per instance
         + IncomingFeed (object)
             + PatientID (number)
             + SiteNumber (number)
@@ -126,15 +128,18 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 ##Create Chartfill link for CallCenter flow aka email [/Home/???]
 ### Create Chartfill Link for CallCenter flow (email) [POST]
 
-Same almost as above but functinality-wise it emails te patient/caregiver on behalf of us.
+Same almost as above but functionality-wise it emails te patient/caregiver on behalf of us.
 Maybe add an error/exception if the email couldn't be sent if possible.
 
 CF - Nate - For me it would likely be the same process; 
 if you have the patient fill in information/have the patient information, I would just call the same API
-A discussion or a visual representation of the current flow would  be needed for this one
+A discussion or a visual representation of the current flow would be needed for this one
 
 + Request 200 (application/json)
-
+    + Headers
+    
+            API_KEY: an api secret/key will be passed here like a1b2c2d3-ijkl-1234-abcd-abcdefghijkl Note: there will be a different key per instance
+            
     + Attributes
         + TODO - TODO FOR CHARTFILL
         + TODO - TODO FOR CHARTFILL
