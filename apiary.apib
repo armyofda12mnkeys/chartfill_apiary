@@ -93,8 +93,8 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 Status = "Rejected"
             }
 
-+ Response 412 (application/json)
-    + Attributes - UPDATE: Error code now returns 412 (Not Acceptable)
++ Response 406 (application/json)
+    + Attributes - UPDATE: Error code now returns 406 (Precondition Failed)
         + Status (string) - 
         + ErrorType (string) - 
         + ErrorMessage (string) - 
@@ -108,8 +108,8 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             }
 
 
-+ Response 406 (application/json)
-    + Attributes - UPDATE: Error code now returns 406 (Precondition Failed)
++ Response 412 (application/json)
+    + Attributes - UPDATE: Error code now returns 412 (Not Acceptable)
         + Status (string) - 
         + ErrorType (string) - 
         + ErrorMessage (string) - what if multiple fields have a validation error? CF- Every field will be separated by "; "
