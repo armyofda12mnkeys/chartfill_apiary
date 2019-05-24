@@ -143,7 +143,8 @@ A discussion or a visual representation of the current flow would be needed for 
         
 + Response 200 (application/json)
     + Attributes
-        + url (string) - url to embed in online screener
+        + Url (string) - url which Chartfill hasv emailed on behalf of our callcenter screener (maybe we will store this url so hence still return it to us)
+        + ReUsedUrl (boolean) - if a url/form is returned, but the url is a saved old url/form (which brings in old data), this would be good to know so we dont raise 'old data' issues to Chartfill
         + Status (string) - usually "Success"
     
     + Body
