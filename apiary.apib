@@ -64,7 +64,8 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
 + Response 200 (application/json)
     + Attributes
-        + url (string) - url to embed in online screener
+        + Url (string) - url to embed in online screener
+        + ReUsedUrl (boolean) - if a url/form is returned, but the url is a saved old url/form (which brings in old data), this would be good to know so we dont raise 'old data' issues to Chartfill
         + Status (string) - usually "Success"
     
     + Body
