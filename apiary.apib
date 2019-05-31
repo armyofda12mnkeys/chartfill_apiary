@@ -42,6 +42,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         + CaregiverPhone (string, optional)  - TODO: Chartfill to implement ... if CaregiverFlow boolean is true, this is optional (not sure if this is a required field in our Caregiver flow)
         + Debug (boolean) - TODO: Chartfill to implement ... states whether to treat this in 'test' mode' aka don't send to the real production distribution list but the test dist list
         + IsCallCenter (boolean) - if this flag is true, then Chartfill will email the patient the link on behalf of Acurian (Note: if Nate prefers this, then I'll remove the 2nd separate CallCenter API call i setup below this one)
+        + REMOVE???_ENV (string) - not sure if we def going to remove this yet.
     + Body
     
             {
@@ -60,7 +61,8 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 CaregiverLastName: "Smith",
                 CaregiverEmail: "caregiver@caregiver.com",
                 CaregiverPhone: "2159876543",
-                Debug: false
+                Debug: false,
+                IsCallCenter: false
             }
 
 
