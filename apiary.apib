@@ -41,6 +41,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         + CaregiverPhone (string, optional)  - TODO: Chartfill to implement ... if CaregiverFlow boolean is true, this is optional (not sure if this is a required field in our Caregiver flow)
         + IsTest (boolean) - TODO: Chartfill to implement ... states whether to treat this in 'test' mode' aka don't send to the real production distribution list but the test dist list
         + IsCallCenter (boolean) - if this flag is true, then Chartfill will email the patient the link on behalf of Acurian (Note: if Nate prefers this, then I'll remove the 2nd separate CallCenter API call i setup below this one)
+        + Locale (string) - locale like en_US (or dash en-US, maybe ask what is preferable)
         + REMOVE???_ENV (string) - not sure if we def going to remove this yet.
         + REMOVE???_Indication (string) - example: "Cancer Or Some Other Indication" CF-Nate- May not need this field due to new auth forms on CF side... Arian: may need to pass 'Final(aka Child) Project Code' if removing this field, see comment above^
                 
