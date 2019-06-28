@@ -144,9 +144,9 @@ prod:      https://as.acurian.com
             Authorization: Use Basic Auth with the supplied user/pass. Please look up how to use Basic Auth header (i can kinda see in Postman how its supposed to look like).
             
     + Attributes
-        + patientId (number)
-        + childPatientId (number)
-        + siteNumber (string)
+        + patientId (number, required) - only two number fields
+        + childPatientId (number, required) - only two number fields
+        + siteNumber (string, required) - send back with leading zeros if the site has any
         + projectCode (string)
         + originalProjectCode (string)
         + patientFirstName (string)
@@ -180,7 +180,7 @@ prod:      https://as.acurian.com
         + mentalBox (string) - up to you how to pass back this boolean via this string field: "True" or "true" or "Y"; your choice.
         + geneticBox (string) - up to you how to pass back this boolean via this string field: "True" or "true" or "Y"; your choice.
         + token (string)
-        + patientStatus (string) - use one of the ENUMS we came up with: [MR_RECORDS_EN_ROUTE_TO_SITE, MR_RETRIEVING_RECORDS, MR_RETRIEVING_DOCTOR_INFO, MR_MISSING_DOCTOR_INFO, MR_INCORRECT_DOCTOR_INFO, ARRIVED_DR_LOOKUP_PAGE, ARRIVED_ESIGN_PAGE, SIGNED, REJECTED, CANCELLED, SOMEONE_ELSE_SIGNED]
+        + patientStatus (string, required) - use one of the ENUMS we came up with: [MR_RECORDS_EN_ROUTE_TO_SITE, MR_RETRIEVING_RECORDS, MR_RETRIEVING_DOCTOR_INFO, MR_MISSING_DOCTOR_INFO, MR_INCORRECT_DOCTOR_INFO, ARRIVED_DR_LOOKUP_PAGE, ARRIVED_ESIGN_PAGE, SIGNED, REJECTED, CANCELLED, SOMEONE_ELSE_SIGNED]
         + authFormurl (string)
         + createdDate (string)
         + modifiedDate (string)
