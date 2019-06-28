@@ -128,4 +128,131 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
 
 
-##Acurian callback API [/???]
+
+## Acurian callback API [/as/api/ChartFill/v1/saveChartFillData]
+### Callback API [POST]
+
+dev:       https://dev-as.acurian.com
+qa:        https://qa-as.acurian.com
+staging:   https://stg-as.acurian.com
+prod:      https://as.acurian.com
+
+
++ Request 200 (application/json)
+    + Headers
+    
+            Authorization: Use Basic Auth with the supplied user/pass. Please look up how to use Basic Auth header (i can kinda see in Postman how its supposed to look like).
+            
+    + Attributes
+        + patientId (number)
+        + childPatientId (number)
+        + siteNumber (string)
+        + projectCode (string)
+        + originalProjectCode (string)
+        + patientFirstName (string)
+        + patientLastName (string)
+        + patientEmail (string)
+        + patientPhone (string)
+        + patientDOB (string)
+        + isCaregiverFlow (string) - up to you how to pass back this boolean via this string field: "True" or "true" or "Y", your choice.
+        + caregiverFirstName (string)
+        + caregiverLastName (string)
+        + caregiverEmail (string)
+        + caregiverPhone (string) - 06/28: hmmm not sure api added this , double-check and ask DB team to add if needed
+        + caregiverRelationship (string)
+        + isTest (string) - up to you how to pass back this boolean via this string field: "True" or "true" or "Y"; your choice.
+        + isCallCenter (string) - up to you how to pass back this boolean via this string field: "True" or "true" or "Y"; your choice.
+        + locale (string)
+        + doctorName (string)
+        + doctorPhone (string)
+        + doctorAddress (string)
+        + doctorCity (string)
+        + doctorState (string)
+        + doctorZip (string)
+        + doctorTwoName (string)
+        + doctorTwoPhone (string)
+        + doctorTwoAddress (string)
+        + doctorTwoCity (string)
+        + doctorTwoState (string)
+        + doctorTwoZip (string)
+        + taname (string) - up to you how to pass back this boolean via this string field: "True" or "true" or "Y"; your choice.
+        + drugBox (string) - up to you how to pass back this boolean via this string field: "True" or "true" or "Y"; your choice.
+        + mentalBox (string) - up to you how to pass back this boolean via this string field: "True" or "true" or "Y"; your choice.
+        + geneticBox (string) - up to you how to pass back this boolean via this string field: "True" or "true" or "Y"; your choice.
+        + token (string)
+        + patientStatus (string) - use one of the ENUMS we came up with: [MR_RECORDS_EN_ROUTE_TO_SITE, MR_RETRIEVING_RECORDS, MR_RETRIEVING_DOCTOR_INFO, MR_MISSING_DOCTOR_INFO, MR_INCORRECT_DOCTOR_INFO, ARRIVED_DR_LOOKUP_PAGE, ARRIVED_ESIGN_PAGE, SIGNED, REJECTED, CANCELLED, SOMEONE_ELSE_SIGNED]
+        + authFormurl (string)
+        + createdDate (string)
+        + modifiedDate (string)
+        + agreementId (string)
+        + agreementFormurl (string)
+
+    + Body
+    
+            {
+                "patientId": 28924635,
+                "childPatientId": 106678599, 
+                "siteNumber":"010101",
+                "projectCode":"2485",
+                "originalProjectCode":"AMS1",
+                "patientFirstName":"John",
+                "patientLastName":"Smith",
+                "patientEmail":"john.smith@gmail.com",
+                "patientPhone":"215-990-0519",
+                "patientDOB":"06/31/1960",
+                "isCaregiverFlow":"True",
+                "caregiverFirstName":"Jane",
+                "caregiverLastName":"Smith",
+                "caregiverEmail":"jane.smith@gmail.com",
+                "caregiverRelationship":"Parent",
+                "isTest":"True",
+                "isCallCenter":"True",
+                "locale":"en_US"
+                "doctorName":"Roberto Panis", 
+                "doctorPhone":"8001231234", 
+                "doctorAddress":"2 Walnut Drive",
+                "doctorCity":"Horsham",
+                "doctorState":"PA",
+                "doctorZip":"19044",
+                "doctorTwoName":"Second Doctor", 
+                "doctorTwoPhone":"8004567890",
+                "doctorTwoAddress":"500 Fairmount Ave",
+                "doctorTwoCity":"Philadelphia",
+                "doctorTwoState":"PA",
+                "doctorTwoZip":"19123",
+                "taname": "",
+                "drugBox":"True",
+                "hivBox":"False",
+                "mentalBox":"False",
+                "geneticBox":"True",
+                "token":"aed87571bfd3c73b7ff9920eafd10fc510fdd1a1",
+                "patientStatus":"MR_RECORDS_EN_ROUTE_TO_SITE",
+                "authFormurl":"http://chartfill.com/etc",
+                "createdDate": "06/18/2019 23:30:15",
+                "modifiedDate":"06/19/2019 23:30:15",
+                "agreementId":"aed87571bfd3c73b7ff9920eafd10fc510fdd1a1",
+                "agreementFormurl":"https://secure.na2.echosign.com/public/apiesign?pid=CBFCIBAA3AAABLblqZhB3Bww1jjUe8yKs5qWFLawePzJaznshxvudXLFmVQaSVqX_rrjk1cw_44SpD41Wvjg*"
+            }
+
++ Response 200 (application/json)
+    + Attributes - UPDATE: Error code now returns 412 (Not Acceptable)
+        + apiResponse (object)
+        + apiErrors (object) 
+    
+    + Body
+    
+            {
+                "apiResponse": {
+                    "chartFillDataSave": "ChartFill Data Saved successfully"
+                },
+                "apiErrors": [
+                    {
+                        "code": 200,
+                        "status": "SUCCESSFULLY_SAVED",
+                        "message": "patient data successfully saved",
+                        "moreInfo": "patient data successfully saved",
+                        "httpStatus": "OK",
+                        "versionInfo": "Supported"
+                    }
+                ]
+            }
