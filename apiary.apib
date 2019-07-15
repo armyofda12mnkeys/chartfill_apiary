@@ -144,8 +144,8 @@ prod:      https://as.acurian.com
             Authorization: Use Basic Auth with the supplied user/pass. Please look up how to use Basic Auth header (i can kinda see in Postman how its supposed to look like).
             
     + Attributes
-        + patientId (number, required) - only two number fields
-        + childPatientId (number, required) - only two number fields
+        + patientId (number, required) - 
+        + childPatientId (number, optional) - only send over if Chartfill has it. They may not yet.
         + siteNumber (string, required) - send back with leading zeros if the site has any
         + projectCode (string)
         + originalProjectCode (string)
