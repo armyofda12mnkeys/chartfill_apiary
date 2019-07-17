@@ -25,22 +25,22 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             API_KEY: an api secret/key will be passed here like a1b2c2d3-ijkl-1234-abcd-abcdefghijkl Note: there will be a different key per instance
             
     + Attributes
-        + PatientID (number)
-        + SiteNumber (string)
-        + ProjectCode (string) - We'll pass the Final(aka Child) Project Code here if this is a generic 'super-screener' (and the regular standalone project code if a non-super-screener)
-        + OriginalProjectCode (string) - just for storage purposes as useful to see where user came from (like AMS1)
-        + PatientFirstName (string)
-        + PatientLastName (string)
+        + PatientID (number, required)
+        + SiteNumber (string, required)
+        + ProjectCode (string, required) - We'll pass the Final(aka Child) Project Code here if this is a generic 'super-screener' (and the regular standalone project code if a non-super-screener)
+        + OriginalProjectCode (string, required) - just for storage purposes as useful to see where user came from (like AMS1)
+        + PatientFirstName (string, required)
+        + PatientLastName (string, required)
         + PatientEmail (string) - this is usually required, but becomes optional field that won't get used if CaregiverFlow is true since CaregiverEmail becomes the person who gets emailed. If this is provided, maybe this person can be CCed on the signature (I would confirm this though as we aren't doing this currently I think. TODO: ACURIAN TO CONFIRM)
-        + PatientPhone (string) - might be an int but not sure for international phone numbers if those are escaped properly so making this a string - Nate Agreed due to () if they are included
+        + PatientPhone (string) - this is usually required, but becomes optional field that won't get used if CaregiverFlow is true.
         + PatientDOB (string) - This string is in a date format like: "1960-01-01"
-        + IsCaregiverFlow (boolean) - TODO: Chartfill to implement ... can send this as true if its Caregiver flow... or false (or dont send at all if its normal Patient flow)
-        + CaregiverFirstName (string, optional) - TODO: Chartfill to implement ... if CaregiverFlow boolean is true, this is required
-        + CaregiverLastName (string, optional) - TODO: Chartfill to implement ... if CaregiverFlow boolean is true, this is required
-        + CaregiverEmail (string, optional)  - TODO: Chartfill to implement ... if CaregiverFlow boolean is true, this is required
-        + CaregiverPhone (string, optional)  - TODO: Chartfill to implement ... if CaregiverFlow boolean is true, this is optional (not sure if this is a required field in our Caregiver flow)
-        + IsTest (boolean) - TODO: Chartfill to implement ... states whether to treat this in 'test' mode' aka don't send to the real production distribution list but the test dist list
-        + IsCallCenter (boolean) - if this flag is true, then Chartfill will email the patient the link on behalf of Acurian (Note: if Nate prefers this, then I'll remove the 2nd separate CallCenter API call i setup below this one)
+        + IsCaregiverFlow (boolean, required) - can send this as true if its Caregiver flow... or false (or dont send at all if its normal Patient flow)
+        + CaregiverFirstName (string, optional) - if CaregiverFlow boolean is true, this is required
+        + CaregiverLastName (string, optional) - if CaregiverFlow boolean is true, this is required
+        + CaregiverEmail (string, optional)  - if CaregiverFlow boolean is true, this is required
+        + CaregiverPhone (string, optional)  - if CaregiverFlow boolean is true, this is optional (not sure if this is a required field in our Caregiver flow, double-check that, then this will always be passed then)
+        + IsTest (boolean, required) - states whether to treat this in 'test' mode' aka don't send to the real production distribution list but the test dist list
+        + IsCallCenter (boolean, required) - if this flag is true, then Chartfill will email the patient the link on behalf of Acurian (Note: if Nate prefers this, then I'll remove the 2nd separate CallCenter API call i setup below this one)
         + Locale (string) - locale like en_US (or dash en-US, maybe ask what is preferable)
         + REMOVE???_ENV (string) - not sure if we def going to remove this yet.
         + REMOVE???_Indication (string) - example: "Cancer Or Some Other Indication" CF-Nate- May not need this field due to new auth forms on CF side... Arian: may need to pass 'Final(aka Child) Project Code' if removing this field, see comment above^
